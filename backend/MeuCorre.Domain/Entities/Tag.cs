@@ -15,6 +15,8 @@ namespace MeuCorre.Domain.Entities
 
         public Tag(Guid usuarioId, string nome, string cor)
         {
+            ValidarEntidadeCategoria(cor);
+
             UsuarioId = usuarioId;
             Nome = nome.ToLower();
             Cor = cor;
