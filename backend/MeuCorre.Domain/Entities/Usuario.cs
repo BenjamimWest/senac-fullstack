@@ -11,8 +11,9 @@ namespace MeuCorre.Domain.Entities
         public bool Ativo { get; private set; }
 
         // Propriedade de navegação para a entidade Categoria pois
-        // o usuário pode ter várias categorias
+        // o usuário pode ter várias Tags
         public virtual ICollection<Categoria> Categorias { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; }
 
 
         //Construtor para criar um novo usuário.

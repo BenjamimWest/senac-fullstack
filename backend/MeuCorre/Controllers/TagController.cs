@@ -25,10 +25,10 @@ namespace MeuCorre.Controllers
         /// <param name="command">Os dados da nova tag</param>
         /// <returns>Retorna uma nova tag criada</returns>
         [HttpPost]
-        [ProducesResponseType(typeof(TagDto), 201)]
+        [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         [ProducesResponseType(409)]
-        public async Task<IActionResult> CriarTag([FromBody] CriarTagCommad command)
+        public async Task<IActionResult> CriarTag([FromBody] CriarTagCommand command)
         {
             var (mensagem, sucesso) = await _mediator.Send(command);
             if (sucesso)
@@ -72,7 +72,7 @@ namespace MeuCorre.Controllers
         [HttpPatch("ativar/{id}")]
         public async Task<IActionResult> AtivarTag(Guid id)
         {
-            var command = new AtivarCategoriaCommand { CategoriaId = id };
+            var command = new AtivarTagCommand { Id = id };
             var (mensagem, sucesso) = await _mediator.Send(command);
             if (sucesso)
             {
@@ -88,7 +88,7 @@ namespace MeuCorre.Controllers
         [HttpPatch("inativar/{id}")]
         public async Task<IActionResult> InativarTag(Guid id)
         {
-            var command = new InativarCategoriaCommand { CategoriaId = id };
+            var command = new InativarTagCommand { Id = id };
             var (mensagem, sucesso) = await _mediator.Send(command);
             if (sucesso)
             {

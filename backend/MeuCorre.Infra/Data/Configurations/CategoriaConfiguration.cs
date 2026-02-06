@@ -44,5 +44,5 @@ namespace MeuCorre.Infra.Data.Configurations
                 .HasForeignKey(categoria => categoria.UsuarioId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
-    }
 }
+    }
