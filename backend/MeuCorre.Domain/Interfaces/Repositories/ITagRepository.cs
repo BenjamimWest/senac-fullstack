@@ -10,10 +10,10 @@ namespace MeuCorre.Domain.Interfaces.Repositories
 {
     public interface ITagRepository
     {
-        //Retorna do banco de dados os dados de uma categoria que possua o Id informado
+        //Retorna do banco de dados os dados de uma tag que possua o Id informado
         Task<Tag?> ObterPorIdAsync(Guid tagId);
 
-        //Retorna do banco de dados todas as categorias que pertençam ao usuário informado
+        //Retorna do banco de dados todas as tags que pertençam ao usuário informado
         Task<IList<Tag>> ListarTodasPorUsuarioAsync(Guid usuarioId);
 
         //Verificar se uma tag existe no banco de dados com o Id informado
